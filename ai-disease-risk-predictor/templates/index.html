@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Disease Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>AI Disease Risk Predictor</h1>
+    <form method="post" action="{{ url_for('predict') }}">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" max="120" required>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" min="0" max="300" step="0.1" required>
+
+        <label for="blood_pressure">Blood Pressure (mmHg):</label>
+        <input type="number" id="blood_pressure" name="blood_pressure" min="0" max="250" step="0.1" required>
+
+        <label for="glucose">Glucose Level (mg/dL):</label>
+        <input type="number" id="glucose" name="glucose" min="0" max="500" step="0.1" required>
+
+        <button type="submit">Predict Risk</button>
+    </form>
+</div>
+<div class="watermark">~ created by Gargi Yekhande</div>
+
+</body>
+</html>

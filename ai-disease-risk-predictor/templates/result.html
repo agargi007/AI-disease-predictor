@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Risk Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Risk Prediction Result</h1>
+    <p><strong>Age:</strong> {{ data.age }}</p>
+    <p><strong>Weight:</strong> {{ data.weight }} kg</p>
+    <p><strong>Blood Pressure:</strong> {{ data.blood_pressure }} mmHg</p>
+    <p><strong>Glucose Level:</strong> {{ data.glucose }} mg/dL</p>
+
+    <h2>Risk Level: <span class="risk-level">{{ result.risk_level }}</span></h2>
+    <p>{{ result.explanation }}</p>
+
+    <h3>Preventive Suggestions:</h3>
+    <ul>
+        {% for tip in result.suggestions %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Predict Again</a>
+</div>
+<div class="watermark">~ created by Gargi Yekhande</div>
+
+</body>
+</html>
